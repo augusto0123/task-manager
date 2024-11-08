@@ -1,11 +1,11 @@
-package com.taskmanager.frontendspringtm;
+package com.taskmanager.backend.springtm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FrontendSpringTmApplication {
+public class BackendSpringTmApplication {
     public static void main(String[] args) {
-        SpringApplication.run(FrontendSpringTmApplication.class, args);
+        SpringApplication.run(BackendSpringTmApplication.class, args);
     }
 }
