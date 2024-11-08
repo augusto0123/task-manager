@@ -28,9 +28,9 @@
     <modules>
         <module>backend</module>
 		<module>frontend</module>
-		<module>backend/backend-implementation</module>
-		<module>backend/backend-spring-tm</module>
-		<module>backend/backend-usecases</module>
+<!--		<module>backend/backend-implementation</module>-->
+<!--		<module>backend/backend-spring-tm</module>-->
+<!--		<module>backend/backend-usecases</module>-->
 		<module>domain</module>
 	</modules>
 

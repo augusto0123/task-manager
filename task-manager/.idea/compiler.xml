@@ -6,25 +6,28 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="backend-spring-tm" />
         <module name="frontend-usecases" />
         <module name="backend-usecases" />
+        <module name="backend-springtm" />
         <module name="domain" />
-        <module name="backend" />
+        <module name="frontend-springtm" />
         <module name="backend-implementation" />
-        <module name="frontend-spring-tm" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="backend-spring-tm" target="21" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="backend" options="-parameters" />
+      <module name="backend" options="" />
       <module name="backend-implementation" options="-parameters" />
       <module name="backend-spring-tm" options="-parameters" />
+      <module name="backend-springtm" options="-parameters" />
       <module name="backend-usecases" options="-parameters" />
       <module name="domain" options="-parameters" />
       <module name="frontend" options="" />
-      <module name="frontend-spring-tm" options="-parameters" />
+      <module name="frontend-springtm" options="-parameters" />
       <module name="frontend-usecases" options="-parameters" />
       <module name="task-manager" options="" />
     </option>

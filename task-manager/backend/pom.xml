@@ -11,6 +11,12 @@
 
     <groupId>com.taskmanager</groupId>
     <artifactId>backend</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>backend-implementation</module>
+        <module>backend-springtm</module>
+        <module>backend-usecases</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>22</maven.compiler.source>

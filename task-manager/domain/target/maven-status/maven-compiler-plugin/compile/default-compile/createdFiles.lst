@@ -1,1 +1,2 @@
-com\taskmanager\domain\Main.class
+com\taskmanager\domain\TaskModel.class
+com\taskmanager\domain\UserModel.class

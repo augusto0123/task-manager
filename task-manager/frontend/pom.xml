@@ -13,7 +13,7 @@
     <artifactId>frontend</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>frontend-spring-tm</module>
+        <module>frontend-springtm</module>
         <module>frontend-usecases</module>
     </modules>
 
