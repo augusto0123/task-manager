@@ -90,7 +90,31 @@ public class UserDaoPostgres implements UserRepository {
 
     @Override
     public boolean update(UserModel userModel) {
-        return false;
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        String sql = "UPDATE usuario SET email = ?, senha = ?, confirmar_senha = ?";
+        sql += "WHERE id = ?;";
+
+        try {
+            connection = ConnectionFactory.getConnection();
+            preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setString(1, userModel.getEmail());
+            preparedStatement.setString(2, userModel.getPassword());
+            preparedStatement.setString(3, userModel.getPasswordConfirm());
+            preparedStatement.setInt(4, userModel.getId());
+
+            preparedStatement.execute();
+            preparedStatement.close();
+
+            return false;
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
