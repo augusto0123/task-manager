@@ -30,7 +30,7 @@ public class TaskController {
     }
 
     @GetMapping("/all")
-    public String getAllTasks(final Model model){
+    public String getAllTasksPage(final Model model){
         List<TaskModel> taskModels = findAllTasks.findAllTasks();
         if (taskModels == null){
             taskModels = new ArrayList<>();
@@ -41,11 +41,17 @@ public class TaskController {
     }
 
     @PostMapping("/update")
-    public String updateTask(TaskModel taskModel){
+    public String getUpdateTaskPage(final TaskModel taskModel){
         boolean result = updateTask.updateTask(taskModel);
         if (!result){
             return "redirect:/task/edit-task";
         }
         return "redirect:/not-found";
+    }
+
+    @GetMapping("/create")
+    public String getCreateTaskPage(final Model model){
+        model.addAttribute("task", new TaskModel());
+        return "/task/create-task";
     }
 }
