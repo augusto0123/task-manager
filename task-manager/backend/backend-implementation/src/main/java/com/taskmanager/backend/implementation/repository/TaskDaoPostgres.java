@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.Date;
 
 public class TaskDaoPostgres implements TaskRepository {
     @Override
@@ -88,7 +89,32 @@ public class TaskDaoPostgres implements TaskRepository {
 
     @Override
     public boolean update(TaskModel taskModel) {
-        return false;
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        String sql = "UPDATE tarefa SET nome = ?, descricao = ?, data_vencimento = ?, prioridade = ?, status = ?";
+        sql += " WHERE id = ?;";
+
+        try {
+            connection = ConnectionFactory.getConnection();
+            preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setString(1, taskModel.getName());
+            preparedStatement.setString(2, taskModel.getDescription());
+            preparedStatement.setDate(3, new Date(taskModel.getDueDate().getTime()));
+            preparedStatement.setString(4, taskModel.getPriority());
+            preparedStatement.setString(5, taskModel.getStatus());
+            preparedStatement.setInt(6, taskModel.getId());
+
+            preparedStatement.execute();
+            preparedStatement.close();
+
+            return false;
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
