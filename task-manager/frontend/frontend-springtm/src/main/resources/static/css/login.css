@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f7fc;
+}
+
+/* Container de Login */
+.login-container {
+    background-color: #fff;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Título */
+h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+/* Formulário */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+input {
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    outline: none;
+    color: #333;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #4A90E2;
+}
+
+/* Botão de Login */
+.login-btn {
+    background-color: #0066CC;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #005bb5;
+}
+
+/* Link de Cadastro */
+.signup-link {
+    margin-top: 1.5rem;
+}
+
+.signup-link a {
+    color: #4A90E2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 600px) {
+    .login-container {
+        padding: 2rem 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .login-btn {
+        font-size: 1rem;
+    }
+}
