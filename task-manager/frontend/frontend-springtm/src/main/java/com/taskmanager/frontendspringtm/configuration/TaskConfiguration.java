@@ -5,7 +5,9 @@ import com.taskmanager.frontend.usecases.port.RestService;
 import com.taskmanager.frontend.usecases.task.*;
 import com.taskmanager.frontendspringtm.port.impl.RestApiController;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class TaskConfiguration {
 
     @Bean
