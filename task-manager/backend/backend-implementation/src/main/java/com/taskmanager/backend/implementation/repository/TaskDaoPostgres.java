@@ -4,13 +4,10 @@ import com.taskmanager.backend.implementation.repository.connection.ConnectionFa
 import com.taskmanager.backend.usecases.port.TaskRepository;
 import com.taskmanager.domain.TaskModel;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import javax.xml.transform.Result;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.Date;
 
 public class TaskDaoPostgres implements TaskRepository {
     @Override
@@ -144,6 +141,48 @@ public class TaskDaoPostgres implements TaskRepository {
 
     @Override
     public int create(TaskModel taskModel) {
-        return 0;
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        String sql = "INSERT INTO tarefa (nome, descricao, data_vencimento, prioridade, status)";
+        sql += " VALUES(?, ?, ?, ?, ?)";
+
+        try {
+            connection = ConnectionFactory.getConnection();
+            connection.setAutoCommit(false);
+            preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+            preparedStatement.setString(1, taskModel.getName());
+            preparedStatement.setString(2, taskModel.getDescription());
+            preparedStatement.setDate(3, new Date(taskModel.getDueDate().getTime()));
+            preparedStatement.setString(4, taskModel.getPriority());
+            preparedStatement.setString(5, taskModel.getStatus());
+
+            preparedStatement.execute();
+            resultSet = preparedStatement.getGeneratedKeys();
+
+            if (resultSet.next()){
+                final int id = resultSet.getInt(1);
+                taskModel.setId(id);
+            }
+
+            connection.commit();
+            resultSet.close();
+            preparedStatement.close();
+
+            return taskModel.getId();
+
+        } catch (Exception e) {
+            if (connection != null){
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+            throw new RuntimeException(e);
+        }
     }
 }
