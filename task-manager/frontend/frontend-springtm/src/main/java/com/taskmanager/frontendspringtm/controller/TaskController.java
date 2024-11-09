@@ -5,6 +5,7 @@ import com.taskmanager.frontend.usecases.task.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
@@ -36,6 +37,15 @@ public class TaskController {
         }
 
         model.addAttribute("tasks", taskModels);
-        return "/task/all";
+        return "/task/all-tasks";
+    }
+
+    @PostMapping("/update")
+    public String updateTask(TaskModel taskModel){
+        boolean result = updateTask.updateTask(taskModel);
+        if (!result){
+            return "redirect:/task/edit-task";
+        }
+        return "redirect:/not-found";
     }
 }
