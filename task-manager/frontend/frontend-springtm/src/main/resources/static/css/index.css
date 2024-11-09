@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Definindo a altura mínima para o body e o html */
+html,
+body {
+    height: 100%;
+}
+
+/* Definindo o layout do body com Flexbox */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #4A90E2;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.navbar:hover {
+    background-color: #377BB5;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Container principal */
+.container {
+    text-align: center;
+    padding: 3rem 1rem;
+    animation: fadeIn 1s ease;
+    flex-grow: 1;
+    /* Permite que o conteúdo cresça e ocupe o espaço disponível */
+}
+
+/* Animação de fade */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Banner */
+.banner h1 {
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+    animation: slideInDown 0.8s ease;
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.banner p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+/* Botões de ação */
+.action-buttons {
+    margin-bottom: 2rem;
+}
+
+.action-buttons a {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    margin: 0.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    width: 200px;
+    /* Definindo a mesma largura para ambos os botões */
+    text-align: center;
+}
+
+.login-btn {
+    background-color: #4A90E2;
+    color: #fff;
+}
+
+.register-btn {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.login-btn:hover,
+.register-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Features */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    animation: fadeIn 1s ease;
+}
+
+.feature-item {
+    background-color: #f5f5f5;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #e3e3e3;
+}
+
+.feature-item i {
+    font-size: 2rem;
+    color: #4A90E2;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.feature-item:hover i {
+    color: #e74c3c;
+}
+
+.feature-item h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Footer */
+.footer {
+    background-color: #4A90E2;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+    font-size: 0.9rem;
+    width: 100%;
+    margin-top: auto;
+    /* Isso empurra o footer para o final da tela */
+}
+
+/* Animações de hover para ícones */
+.feature-item:hover i {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
