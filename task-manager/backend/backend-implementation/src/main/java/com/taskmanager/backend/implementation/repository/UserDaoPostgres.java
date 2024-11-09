@@ -119,7 +119,27 @@ public class UserDaoPostgres implements UserRepository {
 
     @Override
     public boolean deleteById(int id) {
-        return false;
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        String sql = "DELETE FROM usuario";
+        sql += " WHERE id = ?;";
+
+        try {
+            connection = ConnectionFactory.getConnection();
+            preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setInt(1, id);
+
+            preparedStatement.execute();
+            preparedStatement.close();
+
+            return false;
+            
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
