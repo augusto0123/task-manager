@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TaskDaoPostgres implements TaskRepository {
@@ -20,7 +21,7 @@ public class TaskDaoPostgres implements TaskRepository {
         ResultSet resultSet = null;
 
         String sql = "SELECT * FROM tarefa";
-        sql += " WHERE id = ?";
+        sql += " WHERE id = ?;";
 
         try {
             connection = ConnectionFactory.getConnection();
@@ -49,7 +50,40 @@ public class TaskDaoPostgres implements TaskRepository {
 
     @Override
     public List<TaskModel> findAll() {
-        return null;
+
+        final List<TaskModel> taskModels = new ArrayList<>();
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        final String sql = "SELECT * FROM tarefa;";
+
+        try {
+            connection = ConnectionFactory.getConnection();
+            preparedStatement = connection.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+                final TaskModel taskModel = new TaskModel();
+                taskModel.setId(resultSet.getInt("id"));
+                taskModel.setName(resultSet.getString("nome"));
+                taskModel.setDescription(resultSet.getString("descricao"));
+                taskModel.setDueDate(resultSet.getDate("data_vencimento"));
+                taskModel.setPriority(resultSet.getString("prioridade"));
+                taskModel.setStatus(resultSet.getString("status"));
+
+                taskModels.add(taskModel);
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return taskModels;
     }
 
     @Override
