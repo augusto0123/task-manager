@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Tarefas em Andamento</title>
+    <link rel="stylesheet" href="/css/all-tasks.css">
+</head>
+<body>
+
+<div layout:fragment="body">
+
+    <div class="main-content">
+
+        <h2 class="main-title1">Tarefas em Andamento</h2>
+
+        <div id="tarefas-container">
+
+            <div class="task">
+                <div class="task-controls">
+                    <span class="edit-icon" title="Editar tarefa"><i class="fa-solid fa-pencil-alt"></i></span>
+                    <span class="delete-icon" title="Deletar tarefa"><i class="fa-solid fa-trash"></i></span>
+                    <span class="complete-icon" title="Concluir tarefa"><i class="fa-solid fa-circle-check"></i></span>
+                </div>
+
+                <h3>Nome da tarefa</h3>
+
+                <p><strong>Descrição:</strong></p>
+                <p class="description">Descrição</p>
+                <p><strong>Data limite:</strong></p>
+                <p class="data-end">dd/mm/yyy</p>
+                <div class="priority prioridade-desejavel">Prioridade</div>
+            </div>
+
+            <div class="task">
+                <div class="task-controls">
+                    <span class="edit-icon" title="Editar tarefa"><i class="fa-solid fa-pencil-alt"></i></span>
+                    <span class="delete-icon" title="Deletar tarefa"><i class="fa-solid fa-trash"></i></span>
+                    <span class="complete-icon" title="Concluir tarefa"><i class="fa-solid fa-circle-check"></i></span>
+                </div>
+
+                <h3>Nome da tarefa</h3>
+
+                <p><strong>Descrição:</strong></p>
+                <p class="description">Descrição
+                    Implementar a função tal sobre realizacao de principios basicos do java
+                </p>
+                <p><strong>Data limite:</strong></p>
+                <p class="data-end">dd/mm/yyy</p>
+                <div class="priority prioridade-desejavel">Prioridade</div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <link rel="stylesheet" href="/css/create-task.css">
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar">
+    <a href="#" class="logo">Task Manager</a>
+    <ul class="navbar-links">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Sair</a></li>
+    </ul>
+</nav>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <ul>
+        <li><a href="#criar-tarefas"><i class="fa-solid fa-list-check"></i> Criar tarefa</a></li>
+        <li><a href="#listar-tarefas"><i class="fa-solid fa-circle-check"></i> Tarefas concluídas</a></li>
+        <li><a href="#perfil"><i class="fa-solid fa-user"></i> Perfil</a></li>
+    </ul>
+</div>
+
+<!-- Main Content -->
+<div layout:fragment="body"></div>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 Task Manager. Todos os direitos reservados.</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+
+</html>
