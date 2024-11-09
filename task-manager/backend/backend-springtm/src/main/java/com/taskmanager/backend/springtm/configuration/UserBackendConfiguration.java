@@ -4,7 +4,9 @@ import com.taskmanager.backend.implementation.repository.UserDaoPostgres;
 import com.taskmanager.backend.usecases.port.UserRepository;
 import com.taskmanager.backend.usecases.user.CreateUser;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class UserBackendConfiguration {
 
     private final UserRepository userRepository;
