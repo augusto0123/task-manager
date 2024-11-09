@@ -4,9 +4,7 @@ import com.taskmanager.domain.TaskModel;
 import com.taskmanager.frontend.usecases.task.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,5 +51,14 @@ public class TaskController {
     public String getCreateTaskPage(final Model model){
         model.addAttribute("task", new TaskModel());
         return "/task/create-task";
+    }
+
+    @PostMapping("/delete/{id}")
+    public String deleteTask(@PathVariable("id") int id) {
+        boolean result = deleteTask.deleteTask(id);
+        if (!result) {
+            return "redirect:/task/all";
+        }
+        return "redirect:/not-found";
     }
 }
