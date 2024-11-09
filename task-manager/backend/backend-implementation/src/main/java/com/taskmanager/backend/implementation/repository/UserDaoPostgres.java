@@ -4,10 +4,9 @@ import com.taskmanager.backend.implementation.repository.connection.ConnectionFa
 import com.taskmanager.backend.usecases.port.UserRepository;
 import com.taskmanager.domain.UserModel;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import javax.swing.plaf.nimbus.State;
+import javax.xml.transform.Result;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -136,7 +135,7 @@ public class UserDaoPostgres implements UserRepository {
             preparedStatement.close();
 
             return false;
-            
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -144,6 +143,48 @@ public class UserDaoPostgres implements UserRepository {
 
     @Override
     public int create(UserModel userModel) {
-        return 0;
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        String sql = "INSERT INTO usuario (nome, email, senha, confirmar_senha, tipo)";
+        sql += " VALUES(?, ?, ?, ?, ?)";
+
+        try {
+            connection = ConnectionFactory.getConnection();
+            connection.setAutoCommit(false);
+            preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+            preparedStatement.setString(1, userModel.getName());
+            preparedStatement.setString(2, userModel.getEmail());
+            preparedStatement.setString(3, userModel.getPassword());
+            preparedStatement.setString(4, userModel.getPasswordConfirm());
+            preparedStatement.setString(5, userModel.getType());
+
+            preparedStatement.execute();
+            resultSet = preparedStatement.getGeneratedKeys();
+
+            if (resultSet.next()){
+                final int id =resultSet.getInt(1);
+                userModel.setId(id);
+            }
+
+            connection.commit();
+            resultSet.close();
+            preparedStatement.close();
+
+            return userModel.getId();
+
+        } catch (Exception e) {
+            if (connection != null){
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+            throw new RuntimeException(e);
+        }
     }
 }
