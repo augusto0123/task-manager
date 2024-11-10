@@ -19,6 +19,12 @@ public class TaskRestController {
         return taskModels;
     }
 
+    @GetMapping("/all-completed")
+    public List<TaskModel> getAllCompletedTasks(){
+        List<TaskModel> taskModels = taskBackendConfiguration.findTask().findByStatus("Concluída");
+        return taskModels;
+    }
+
     @GetMapping("/findById/{id}")
     public TaskModel getTaskById(@PathVariable("id") final int id){
         TaskModel taskModel = taskBackendConfiguration.findTask().findById(id);
