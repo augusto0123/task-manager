@@ -15,7 +15,7 @@ public class TaskRestController {
 
     @GetMapping("/all")
     public List<TaskModel> getAllTasks(){
-        List<TaskModel> taskModels = taskBackendConfiguration.findTask().findAll();
+        List<TaskModel> taskModels = taskBackendConfiguration.findTask().findByStatus("Em Andamento");
         return taskModels;
     }
 
