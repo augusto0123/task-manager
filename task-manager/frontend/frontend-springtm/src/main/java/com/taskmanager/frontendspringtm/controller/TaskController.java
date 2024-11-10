@@ -63,7 +63,7 @@ public class TaskController {
         return "/task/create-task";
     }
 
-    @PostMapping("/create")
+    @PostMapping("/add")
     public String createTask(final TaskModel taskModel){
         final int id = createTask.createTask(taskModel);
         if (id > 0){

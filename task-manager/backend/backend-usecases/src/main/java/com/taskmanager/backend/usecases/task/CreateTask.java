@@ -15,7 +15,7 @@ public class CreateTask {
         }
         if (taskModel.getName().isEmpty()
                 || taskModel.getDescription().isEmpty()
-                || taskModel.getDueDate() == null
+                || taskModel.getDueDate().isEmpty()
                 || taskModel.getPriority().isEmpty()
                 || taskModel.getStatus().isEmpty()){
             return -1;

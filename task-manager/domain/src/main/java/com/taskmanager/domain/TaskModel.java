@@ -7,7 +7,7 @@ public class TaskModel {
     private int id;
     private String name;
     private String description;
-    private Date dueDate;
+    private String dueDate;
     private String priority;
     private String status;
     private int userId;
@@ -36,11 +36,11 @@ public class TaskModel {
         this.description = description;
     }
 
-    public Date getDueDate() {
+    public String getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(Date dueDate) {
+    public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 

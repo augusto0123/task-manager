@@ -6,6 +6,8 @@ import com.taskmanager.domain.TaskModel;
 
 import javax.xml.transform.Result;
 import java.sql.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +34,7 @@ public class TaskDaoPostgres implements TaskRepository {
                 taskModel.setId(resultSet.getInt("id"));
                 taskModel.setName(resultSet.getString("nome"));
                 taskModel.setDescription(resultSet.getString("descricao"));
-                taskModel.setDueDate(resultSet.getDate("data_vencimento"));
+                taskModel.setDueDate(resultSet.getString("data_vencimento"));
                 taskModel.setPriority(resultSet.getString("prioridade"));
                 taskModel.setStatus(resultSet.getString("status"));
             }
@@ -67,7 +69,7 @@ public class TaskDaoPostgres implements TaskRepository {
                 taskModel.setId(resultSet.getInt("id"));
                 taskModel.setName(resultSet.getString("nome"));
                 taskModel.setDescription(resultSet.getString("descricao"));
-                taskModel.setDueDate(resultSet.getDate("data_vencimento"));
+                taskModel.setDueDate(resultSet.getString("data_vencimento"));
                 taskModel.setPriority(resultSet.getString("prioridade"));
                 taskModel.setStatus(resultSet.getString("status"));
 
@@ -99,7 +101,7 @@ public class TaskDaoPostgres implements TaskRepository {
 
             preparedStatement.setString(1, taskModel.getName());
             preparedStatement.setString(2, taskModel.getDescription());
-            preparedStatement.setDate(3, new Date(taskModel.getDueDate().getTime()));
+            preparedStatement.setDate(3,Date.valueOf(taskModel.getDueDate()));
             preparedStatement.setString(4, taskModel.getPriority());
             preparedStatement.setString(5, taskModel.getStatus());
             preparedStatement.setInt(6, taskModel.getId());
@@ -156,7 +158,7 @@ public class TaskDaoPostgres implements TaskRepository {
 
             preparedStatement.setString(1, taskModel.getName());
             preparedStatement.setString(2, taskModel.getDescription());
-            preparedStatement.setDate(3, new Date(taskModel.getDueDate().getTime()));
+            preparedStatement.setDate(3,Date.valueOf(taskModel.getDueDate()));
             preparedStatement.setString(4, taskModel.getPriority());
             preparedStatement.setString(5, taskModel.getStatus());
 
@@ -184,5 +186,11 @@ public class TaskDaoPostgres implements TaskRepository {
             }
             throw new RuntimeException(e);
         }
+    }
+
+    private String formataData(String data) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        LocalDateTime dateTime = LocalDateTime.parse(data, formatter);
+        return dateTime.toLocalDate().toString();
     }
 }
