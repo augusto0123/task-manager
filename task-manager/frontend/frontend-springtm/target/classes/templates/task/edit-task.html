@@ -12,34 +12,37 @@
     <div class="main-content">
         <h2 class="main-title">Editar Tarefa</h2>
 
-        <!-- Formulário para cadastro de tarefa -->
-        <form id="task-form" class="task-form">
+        <!-- Formulário para edição de tarefa -->
+        <form class="task-form" method="POST" th:action="@{/task/update}">
             <div class="input-group">
-                <label for="task-name"><strong>Nome da Tarefa</strong></label>
-                <input type="text" id="task-name" name="task-name" placeholder="Digite o nome da tarefa" required>
+                <label for="name"><strong>Nome da Tarefa</strong></label>
+                <input type="text" id="name" name="name" th:field="${task.name}" required>
             </div>
 
             <div class="input-group">
-                <label for="task-description"><strong>Descrição</strong></label>
-                <textarea id="task-description" name="task-description" placeholder="Descreva a tarefa"
-                          required></textarea>
+                <label for="description"><strong>Descrição</strong></label>
+                <textarea id="description" name="description" th:field="${task.description}" required></textarea>
             </div>
 
             <div class="input-group">
-                <label for="task-due-date"><strong>Data Limite</strong></label>
-                <input type="date" id="task-due-date" name="task-due-date" required>
+                <label for="dueDate"><strong>Data Limite</strong></label>
+                <input type="date" id="dueDate" name="dueDate" th:field="${task.deuDate}" required>
             </div>
 
             <div class="input-group">
-                <label for="task-priority"><strong>Prioridade</strong></label>
-                <select id="task-priority" name="task-priority" required>
-                    <option value="essential">Essencial</option>
-                    <option value="important">Importante</option>
-                    <option value="desired">Desejável</option>
+                <label for="priority"><strong>Prioridade</strong></label>
+                <select id="priority" name="priority" th:field="${task.priority}" required>
+                    <option value="Essencial">Essencial</option>
+                    <option value="Importante">Importante</option>
+                    <option value="Desejável">Desejável</option>
                 </select>
             </div>
 
-            <button type="submit" class="submit-btn">Salvar Alterações</button>
+            <div class="input-group">
+                <input type="hidden" name="status" id="status" value="Em Andamento">
+            </div>
+
+            <button class="submit-btn">Salvar Alterações</button>
         </form>
     </div>
 
