@@ -63,6 +63,15 @@ public class TaskController {
         return "/task/create-task";
     }
 
+    @PostMapping("/create")
+    public String createTask(final TaskModel taskModel){
+        final int id = createTask.createTask(taskModel);
+        if (id > 0){
+            return "redirect:/task/all";
+        }
+        return "redirect:/not-found";
+    }
+
     @PostMapping("/delete/{id}")
     public String deleteTask(@PathVariable("id") int id) {
         boolean result = deleteTask.deleteTask(id);
