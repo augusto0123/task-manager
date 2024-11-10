@@ -5,108 +5,124 @@
     font-family: Arial, sans-serif;
 }
 
+html,
 body {
-    background-color: #F4F7FC;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    background-color: #f4f7fc;
 }
 
-.container {
+/* Container de Login */
+.login-container {
     background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 450px;
-    transition: all 0.3s ease;
+    max-width: 500px; /* Aumentando a largura */
+    text-align: center;
 }
 
-.container h2 {
-    text-align: center;
-    margin-bottom: 20px;
+/* Título */
+h2 {
     color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+/* Formulário */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 14px;
+label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
     color: #333;
 }
 
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+input,
+select {
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
     outline: none;
-    transition: border 0.3s ease;
+    color: #333;
+    transition: border-color 0.3s;
 }
 
-.form-group input:focus {
-    border-color: #0066cc;
+input:focus,
+select:focus {
+    border-color: #4A90E2;
 }
 
-.form-group select {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
+/* Melhorando o estilo do select */
+select {
     background-color: #fff;
-    transition: border 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 2rem; /* Espaço para a seta */
+    background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.5%2C5.5L8%2C11L13.5%2C5.5H2.5z%22%20fill%3D%22%23003333%22%2F%3E%3C%2Fsvg%3E'); /* Seta para o select */
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    background-size: 1.2rem;
 }
 
-.form-group select:focus {
-    border-color: #0066cc;
-}
-
-.btn-submit {
-    width: 100%;
-    padding: 12px;
-    background-color: #0066cc;
+/* Botão de Login */
+.login-btn {
+    background-color: #0066CC;
     color: #fff;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-.btn-submit:hover {
+.login-btn:hover {
     background-color: #005bb5;
 }
 
-.form-message {
-    color: #d9534f;
-    font-size: 14px;
-    text-align: center;
-    margin-top: 10px;
+/* Link de Cadastro */
+.signup-link {
+    margin-top: 1.5rem;
 }
 
-/* Responsividade */
+.signup-link a {
+    color: #4A90E2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries para Responsividade */
 @media (max-width: 600px) {
-    .container {
-        padding: 20px;
+    .login-container {
+        padding: 2rem 1.5rem;
     }
 
-    .btn-submit {
-        font-size: 14px;
-        padding: 10px;
+    h2 {
+        font-size: 1.5rem;
     }
-}
 
-@media (max-width: 900px) {
-    .container {
-        padding: 25px;
-        max-width: 600px;
+    .login-btn {
+        font-size: 1rem;
     }
 }
