@@ -13,7 +13,7 @@
         <h2 class="main-title">Cadastrar Tarefa</h2>
 
         <!-- Formulário para cadastro de tarefa -->
-        <form class="task-form" novalidate method="POST" th:action="@{/task/add}">
+        <form class="task-form" method="POST" th:action="@{/task/add}">
             <div class="input-group">
                 <label for="name"><strong>Nome da Tarefa</strong></label>
                 <input type="text" id="name" name="name" placeholder="Digite o nome da tarefa" required>
@@ -42,7 +42,7 @@
                 <input type="hidden" name="status" id="status" value="Em Andamento">
             </div>
 
-            <button type="submit" class="submit-btn">Cadastrar Tarefa</button>
+            <button class="submit-btn">Cadastrar Tarefa</button>
         </form>
     </div>
 

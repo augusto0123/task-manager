@@ -14,6 +14,6 @@ public class CommonController {
 
     @GetMapping("/not-found")
     public String getNotFound(){
-        return "/conta/not-found";
+        return "/common/not-found";
     }
 }
