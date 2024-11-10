@@ -87,10 +87,10 @@ public class TaskDaoPostgres implements TaskRepository {
     }
 
     @Override
-    public List<TaskModel> findByStatus(String type) {
+    public List<TaskModel> findByStatus(String status) {
         final List<TaskModel> taskModels = new ArrayList<>();
 
-        if (type == null || type.isEmpty()) {
+        if (status == null || status.isEmpty()) {
             throw new IllegalArgumentException("O status não pode ser nulo ou vazio.");
         }
 
@@ -103,7 +103,7 @@ public class TaskDaoPostgres implements TaskRepository {
         try {
             connection = ConnectionFactory.getConnection();
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, type);
+            preparedStatement.setString(1, status);
 
             resultSet = preparedStatement.executeQuery();
 

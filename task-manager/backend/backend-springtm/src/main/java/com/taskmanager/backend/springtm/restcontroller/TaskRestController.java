@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/task")
 public class TaskRestController {
 
@@ -15,13 +16,7 @@ public class TaskRestController {
 
     @GetMapping("/all")
     public List<TaskModel> getAllTasks(){
-        List<TaskModel> taskModels = taskBackendConfiguration.findTask().findByStatus("Em Andamento");
-        return taskModels;
-    }
-
-    @GetMapping("/all-completed")
-    public List<TaskModel> getAllCompletedTasks(){
-        List<TaskModel> taskModels = taskBackendConfiguration.findTask().findByStatus("Concluída");
+        List<TaskModel> taskModels = taskBackendConfiguration.findTask().findAll();
         return taskModels;
     }
 
@@ -29,6 +24,12 @@ public class TaskRestController {
     public TaskModel getTaskById(@PathVariable("id") final int id){
         TaskModel taskModel = taskBackendConfiguration.findTask().findById(id);
         return taskModel;
+    }
+
+    @GetMapping("/findByStatus/{status}")
+    public List<TaskModel> getTasksByStatus(@PathVariable final String status){
+        List<TaskModel> taskModels = taskBackendConfiguration.findTask().findByStatus(status);
+        return taskModels;
     }
 
     @PutMapping("/update")

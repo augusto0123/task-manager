@@ -13,8 +13,8 @@ public class FindTaskByStatus {
         this.restService = restService;
     }
 
-    public List<TaskModel> findTaskByStatus(final int id){
-        final String resource = "/task/all-completed";
+    public List<TaskModel> findTaskByStatus(final String status){
+        final String resource = "/task/findByStatus/" + status;
         final List<TaskModel> taskModels = restService.get(resource);
         return taskModels;
     }

@@ -10,26 +10,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@CrossOrigin
 @RequestMapping("/task")
 public class TaskController {
 
     private final CreateTask createTask;
     private final FindAllTasks findAllTasks;
     private final FindTaskById findTaskById;
+
+    private final FindTaskByStatus findTaskByStatus;
     private final UpdateTask updateTask;
     private final DeleteTask deleteTask;
 
-    public TaskController(CreateTask createTask, FindAllTasks findAllTasks, FindTaskById findTaskById, UpdateTask updateTask, DeleteTask deleteTask) {
+    public TaskController(CreateTask createTask, FindAllTasks findAllTasks, FindTaskById findTaskById, FindTaskByStatus findTaskByStatus, UpdateTask updateTask, DeleteTask deleteTask) {
         this.createTask = createTask;
         this.findAllTasks = findAllTasks;
         this.findTaskById = findTaskById;
+        this.findTaskByStatus = findTaskByStatus;
         this.updateTask = updateTask;
         this.deleteTask = deleteTask;
     }
 
     @GetMapping("/all")
     public String getAllTasksPage(final Model model){
-        List<TaskModel> taskModels = findAllTasks.findAllTasks();
+        List<TaskModel> taskModels = findTaskByStatus.findTaskByStatus("Em Andamento");
         if (taskModels == null){
             taskModels = new ArrayList<>();
         }
