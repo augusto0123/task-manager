@@ -53,8 +53,14 @@ public class TaskController {
         return "/task/completed-tasks";
     }
 
-    @GetMapping("/edit")
-    public String getEditTaskPage(){
+    @GetMapping("/edit/{id}")
+    public String getEditTaskPage(@PathVariable("id") final int id, final Model model){
+
+        TaskModel taskModel = findTaskById.findTaskById(id);
+        if (taskModel == null){
+            return "redirect:/not-found";
+        }
+        model.addAttribute("task", taskModel);
         return "/task/edit-task";
     }
 
