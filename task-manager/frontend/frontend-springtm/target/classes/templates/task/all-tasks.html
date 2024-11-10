@@ -17,7 +17,7 @@
 
             <div class="task" th:each="task : ${tasks}">
                 <div class="task-controls">
-                    <a th:href="@{/task/edit}" class="edit-icon" title="Editar tarefa">
+                    <a th:href="@{/task/edit/{id} (id=${task.id})}" class="edit-icon" title="Editar tarefa">
                         <i class="fa-solid fa-pencil-alt"></i>
                     </a>
                     <span class="delete-icon" title="Deletar tarefa"><i class="fa-solid fa-trash"></i></span>
