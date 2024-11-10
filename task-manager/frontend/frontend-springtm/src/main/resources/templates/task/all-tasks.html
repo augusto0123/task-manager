@@ -29,7 +29,11 @@
                 <p class="description" th:text="${task.description}"></p>
                 <p><strong>Data limite:</strong></p>
                 <p class="data-end" th:text="${task.dueDate}"></p>
-                <div class="priority prioridade-desejavel" th:text="${task.priority}"></div>
+                <div class="priority"
+                     th:classappend="${task.priority} == 'Importante' ? 'prioridade-importante' :
+                     (${task.priority} == 'Essencial' ? 'prioridade-essencial' :
+                     (${task.priority} == 'Desejável' ? 'prioridade-desejavel' : ''))"
+                     th:text="${task.priority}"></div>
             </div>
 
         </div>

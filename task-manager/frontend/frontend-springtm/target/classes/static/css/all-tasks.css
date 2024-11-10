@@ -154,8 +154,6 @@ body {
     font-size: 1rem;
     margin-top: 0.5rem;
     color: #666;
-    text-align: justify;
-    /* Alinha o texto de forma justificada */
 }
 
 .data-end {
@@ -168,6 +166,47 @@ body {
 .fa-solid {
     font-size: 25px;
     margin-left: 15px;
+}
+
+.prioridade-importante {
+    background-color: #FFD700;  /* Amarelo dourado */
+    color: #333;  /* Texto escuro */
+    padding: 10px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+}
+
+.prioridade-essencial {
+    background-color: #FFA500;  /* Laranja */
+    color: #fff;  /* Texto branco */
+    padding: 10px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+}
+
+.prioridade-desejavel {
+    background-color: #FF69B4;  /* Rosa */
+    color: #fff;  /* Texto branco */
+    padding: 10px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+}
+
+/* Adicionando transições suaves ao passar o mouse */
+.prioridade-importante:hover,
+.prioridade-essencial:hover,
+.prioridade-desejavel:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
 }
 
 /* Footer */
