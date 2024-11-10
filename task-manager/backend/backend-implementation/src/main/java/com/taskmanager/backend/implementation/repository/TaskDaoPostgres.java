@@ -87,6 +87,11 @@ public class TaskDaoPostgres implements TaskRepository {
     }
 
     @Override
+    public List<TaskModel> findByStatus(String type) {
+        return null;
+    }
+
+    @Override
     public boolean update(TaskModel taskModel) {
 
         Connection connection = null;
