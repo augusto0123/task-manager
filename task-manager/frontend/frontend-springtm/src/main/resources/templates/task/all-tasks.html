@@ -33,7 +33,9 @@
 
             <div class="task">
                 <div class="task-controls">
-                    <span class="edit-icon" title="Editar tarefa"><i class="fa-solid fa-pencil-alt"></i></span>
+                    <a th:href="@{/task/edit}" class="edit-icon" title="Editar tarefa">
+                        <i class="fa-solid fa-pencil-alt"></i>
+                    </a>
                     <span class="delete-icon" title="Deletar tarefa"><i class="fa-solid fa-trash"></i></span>
                     <span class="complete-icon" title="Concluir tarefa"><i class="fa-solid fa-circle-check"></i></span>
                 </div>
