@@ -164,6 +164,12 @@ body {
     color: #666;
 }
 
+/* Icones */
+.fa-solid {
+    font-size: 25px;
+    margin-left: 15px;
+}
+
 /* Footer */
 .footer {
     background-color: #4A90E2;
