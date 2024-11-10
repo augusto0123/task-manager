@@ -17,4 +17,9 @@ public class AccountController {
     public String getRegisterPage(){
         return "account/register";
     }
+
+    @GetMapping("/profile")
+    public String getProfilePage(){
+        return "account/profile";
+    }
 }
