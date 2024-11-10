@@ -38,6 +38,11 @@ public class TaskController {
         return "/task/all-tasks";
     }
 
+    @GetMapping("/all-completed")
+    public String getAllCompletedTasksPage(final Model model){
+        return "/task/completed-tasks";
+    }
+
     @PostMapping("/update")
     public String getUpdateTaskPage(final TaskModel taskModel){
         boolean result = updateTask.updateTask(taskModel);
