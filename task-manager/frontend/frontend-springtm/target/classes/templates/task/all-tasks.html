@@ -15,23 +15,7 @@
 
         <div id="tarefas-container">
 
-            <div class="task">
-                <div class="task-controls">
-                    <span class="edit-icon" title="Editar tarefa"><i class="fa-solid fa-pencil-alt"></i></span>
-                    <span class="delete-icon" title="Deletar tarefa"><i class="fa-solid fa-trash"></i></span>
-                    <span class="complete-icon" title="Concluir tarefa"><i class="fa-solid fa-circle-check"></i></span>
-                </div>
-
-                <h3>Nome da tarefa</h3>
-
-                <p><strong>Descrição:</strong></p>
-                <p class="description">Descrição</p>
-                <p><strong>Data limite:</strong></p>
-                <p class="data-end">dd/mm/yyy</p>
-                <div class="priority prioridade-desejavel">Prioridade</div>
-            </div>
-
-            <div class="task">
+            <div class="task" th:each="task : ${tasks}">
                 <div class="task-controls">
                     <a th:href="@{/task/edit}" class="edit-icon" title="Editar tarefa">
                         <i class="fa-solid fa-pencil-alt"></i>
@@ -40,15 +24,13 @@
                     <span class="complete-icon" title="Concluir tarefa"><i class="fa-solid fa-circle-check"></i></span>
                 </div>
 
-                <h3>Nome da tarefa</h3>
+                <h3 th:text="${task.name}"></h3>
 
-                <p><strong>Descrição:</strong></p>
-                <p class="description">Descrição
-                    Implementar a função tal sobre realizacao de principios basicos do java
-                </p>
+                <p><strong>:</strong></p>
+                <p class="description" th:text="${task.description}"></p>
                 <p><strong>Data limite:</strong></p>
-                <p class="data-end">dd/mm/yyy</p>
-                <div class="priority prioridade-desejavel">Prioridade</div>
+                <p class="data-end" th:text="${task.dueDate}"></p>
+                <div class="priority prioridade-desejavel" th:text="${task.priority}"></div>
             </div>
 
         </div>
