@@ -29,6 +29,12 @@ public class TaskConfiguration {
     }
 
     @Bean
+    public FindTaskByStatus findTaskByStatus(){
+        RestService<TaskModel> restService = new RestApiController<>();
+        return new FindTaskByStatus(restService);
+    }
+
+    @Bean
     public UpdateTask updateTask(){
         RestService<TaskModel> restService = new RestApiController<>();
         return new UpdateTask(restService);
