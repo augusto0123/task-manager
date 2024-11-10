@@ -43,6 +43,11 @@ public class TaskController {
         return "/task/completed-tasks";
     }
 
+    @GetMapping("/edit")
+    public String getEditTaskPage(){
+        return "/task/edit-task";
+    }
+
     @PostMapping("/update")
     public String getUpdateTaskPage(final TaskModel taskModel){
         boolean result = updateTask.updateTask(taskModel);
