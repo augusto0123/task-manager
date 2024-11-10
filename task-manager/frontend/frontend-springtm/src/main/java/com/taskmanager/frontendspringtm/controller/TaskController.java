@@ -44,6 +44,12 @@ public class TaskController {
 
     @GetMapping("/all-completed")
     public String getAllCompletedTasksPage(final Model model){
+        List<TaskModel> taskModels = findTaskByStatus.findTaskByStatus("Concluída");
+        if (taskModels == null){
+            taskModels = new ArrayList<>();
+        }
+
+        model.addAttribute("tasks", taskModels);
         return "/task/completed-tasks";
     }
 
