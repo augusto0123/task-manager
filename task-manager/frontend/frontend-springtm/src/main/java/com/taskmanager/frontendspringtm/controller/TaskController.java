@@ -54,7 +54,7 @@ public class TaskController {
     }
 
     @GetMapping("/edit/{id}")
-    public String getEditTaskPage(@PathVariable("id") final int id, final Model model){
+    public String getEditTaskPage(@PathVariable("id") int id, final Model model){
 
         TaskModel taskModel = findTaskById.findTaskById(id);
         if (taskModel == null){
@@ -65,10 +65,10 @@ public class TaskController {
     }
 
     @PostMapping("/update")
-    public String getUpdateTaskPage(final TaskModel taskModel){
+    public String getUpdateTask(TaskModel taskModel){
         boolean result = updateTask.updateTask(taskModel);
         if (!result){
-            return "redirect:/task/edit-task";
+            return "redirect:/task/all";
         }
         return "redirect:/not-found";
     }

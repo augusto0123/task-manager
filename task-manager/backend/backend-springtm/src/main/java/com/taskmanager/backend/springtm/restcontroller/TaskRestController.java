@@ -32,9 +32,10 @@ public class TaskRestController {
         return taskModels;
     }
 
-    @PutMapping("/update")
-    public boolean getUpdateTask(@RequestBody TaskModel taskModel){
-        return taskBackendConfiguration.updateTask().update(taskModel);
+    @PutMapping("/update/{id}")
+    public boolean getUpdateTask(@PathVariable int id, @RequestBody TaskModel taskModel){
+        boolean result = taskBackendConfiguration.updateTask().update(taskModel);
+        return result;
     }
 
     @PostMapping("/add")
