@@ -161,6 +161,49 @@ body {
     margin-left: 15px;
 }
 
+/* Prioridade */
+.priority {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    background-color: #f39c12;
+}
+
+.prioridade-importante {
+    background-color: #FFD700;  /* Amarelo dourado */
+    color: #333;  /* Texto escuro */
+    padding: 10px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+}
+
+.prioridade-essencial {
+    background-color: #FFA500;  /* Laranja */
+    color: #fff;  /* Texto branco */
+    padding: 10px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+}
+
+.prioridade-desejavel {
+    background-color: #FF69B4;  /* Rosa */
+    color: #fff;  /* Texto branco */
+    padding: 10px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+}
+
 /* Footer */
 .footer {
     background-color: #4A90E2;
