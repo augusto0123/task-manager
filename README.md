@@ -74,9 +74,12 @@ A tarefa será movida para a lista de Tarefas Concluídas e não estará mais vi
 Backend:
 Java com Spring Boot:
 Motivo da escolha: Escolhi o Spring Boot porque ele facilita o desenvolvimento de APIs RESTful com pouca configuração e é fácil de integrar com outras ferramentas. Usei a clean arquitecture como arquitetura, pois é bem organizada.
+Versão do Java:21
+Versão do Spring Boot:3.3.5
 
 Maven:
 Motivo da escolha: Maven é uma ferramenta muito usada para gerenciar dependências e automatizar o processo de build de projetos Java.
+Versão do Maven: 3.9.9
 
 Banco de Dados:
 PostgreSQL:
@@ -86,3 +89,4 @@ psql (PostgreSQL) 16.4
 Frontend:
 Thymeleaf:
 Motivo da escolha: O Thymeleaf é fácil de usar e integra bem com o Spring Boot, permitindo renderizar páginas HTML dinâmicas no servidor. Usei mais de uma vez e me senti mais confortável de usar nessa oportunidade.
+Versão do thymeleaf:3.3.5
