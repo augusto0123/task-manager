@@ -20,7 +20,10 @@
                     <a th:href="@{/task/edit/{id} (id=${task.id})}" class="edit-icon" title="Editar tarefa">
                         <i class="fa-solid fa-pencil-alt"></i>
                     </a>
-                    <span class="delete-icon" title="Deletar tarefa"><i class="fa-solid fa-trash"></i></span>
+                    <a th:href="@{/task/delete/{id} (id=${task.id})}" class="delete-icon" title="Deletar tarefa">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+
                     <span class="complete-icon" title="Concluir tarefa"><i class="fa-solid fa-circle-check"></i></span>
                 </div>
 
