@@ -1,1 +1,9 @@
-D:\task manager\task-manager\task-manager\frontend\frontend-usecases\src\main\java\com\taskmanager\frontend\usecases\Main.java
+D:\task manager\task-manager\task-manager\frontend\frontend-usecases\src\main\java\com\taskmanager\frontend\usecases\port\RestService.java
+D:\task manager\task-manager\task-manager\frontend\frontend-usecases\src\main\java\com\taskmanager\frontend\usecases\task\ConcludeTask.java
+D:\task manager\task-manager\task-manager\frontend\frontend-usecases\src\main\java\com\taskmanager\frontend\usecases\task\CreateTask.java
+D:\task manager\task-manager\task-manager\frontend\frontend-usecases\src\main\java\com\taskmanager\frontend\usecases\task\DeleteTask.java
+D:\task manager\task-manager\task-manager\frontend\frontend-usecases\src\main\java\com\taskmanager\frontend\usecases\task\FindAllTasks.java
+D:\task manager\task-manager\task-manager\frontend\frontend-usecases\src\main\java\com\taskmanager\frontend\usecases\task\FindTaskById.java
+D:\task manager\task-manager\task-manager\frontend\frontend-usecases\src\main\java\com\taskmanager\frontend\usecases\task\FindTaskByStatus.java
+D:\task manager\task-manager\task-manager\frontend\frontend-usecases\src\main\java\com\taskmanager\frontend\usecases\task\UpdateTask.java
+D:\task manager\task-manager\task-manager\frontend\frontend-usecases\src\main\java\com\taskmanager\frontend\usecases\user\CreateUser.java

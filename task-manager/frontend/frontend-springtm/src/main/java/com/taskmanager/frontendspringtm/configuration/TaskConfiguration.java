@@ -45,4 +45,10 @@ public class TaskConfiguration {
         RestService<TaskModel> restService = new RestApiController<>();
         return new DeleteTask(restService);
     }
+
+    @Bean
+    public ConcludeTask concludeTask(){
+        RestService<TaskModel> restService = new RestApiController<>();
+        return new ConcludeTask(restService);
+    }
 }

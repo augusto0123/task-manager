@@ -1,1 +1,9 @@
-com\taskmanager\frontend\usecases\Main.class
+com\taskmanager\frontend\usecases\task\CreateTask.class
+com\taskmanager\frontend\usecases\task\UpdateTask.class
+com\taskmanager\frontend\usecases\task\FindAllTasks.class
+com\taskmanager\frontend\usecases\port\RestService.class
+com\taskmanager\frontend\usecases\task\DeleteTask.class
+com\taskmanager\frontend\usecases\task\FindTaskById.class
+com\taskmanager\frontend\usecases\user\CreateUser.class
+com\taskmanager\frontend\usecases\task\ConcludeTask.class
+com\taskmanager\frontend\usecases\task\FindTaskByStatus.class

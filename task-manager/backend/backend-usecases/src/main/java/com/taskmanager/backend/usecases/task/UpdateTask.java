@@ -28,4 +28,13 @@ public class UpdateTask {
             return true;
         }
     }
+
+    public boolean conclude(final int id) {
+        if (id <= 0){
+            return false;
+        }
+        boolean response = taskRepository.conclude(id);
+        return response;
+    }
+
 }

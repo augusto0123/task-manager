@@ -12,5 +12,6 @@ public interface TaskRepository {
     boolean update(final TaskModel taskModel);
     boolean deleteById(final int id);
     int create(final TaskModel taskModel);
+    boolean conclude(final int id);
 
 }

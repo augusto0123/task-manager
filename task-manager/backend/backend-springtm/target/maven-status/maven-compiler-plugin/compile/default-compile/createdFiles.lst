@@ -1,0 +1,5 @@
+com\taskmanager\backend\springtm\BackendSpringTmApplication.class
+com\taskmanager\backend\springtm\restcontroller\UserRestController.class
+com\taskmanager\backend\springtm\configuration\TaskBackendConfiguration.class
+com\taskmanager\backend\springtm\restcontroller\TaskRestController.class
+com\taskmanager\backend\springtm\configuration\UserBackendConfiguration.class

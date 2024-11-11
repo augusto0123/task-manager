@@ -47,4 +47,10 @@ public class TaskRestController {
     public boolean delete(@PathVariable("id") final int id){
         return taskBackendConfiguration.deleteTask().delete(id);
     }
+
+    @PutMapping("/conclude/{id}")
+    public boolean concludeTask(@PathVariable("id") int id){
+        boolean result = taskBackendConfiguration.updateTask().conclude(id);
+        return result;
+    }
 }

@@ -23,8 +23,9 @@
                     <a th:href="@{/task/delete/{id} (id=${task.id})}" class="delete-icon" title="Deletar tarefa">
                         <i class="fa-solid fa-trash"></i>
                     </a>
-
-                    <span class="complete-icon" title="Concluir tarefa"><i class="fa-solid fa-circle-check"></i></span>
+                    <a th:href="@{/task/conclude/{id} (id=${task.id})}" class="complete-icon" title="Concluir tarefa">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </a>
                 </div>
 
                 <h3 th:text="${task.name}"></h3>

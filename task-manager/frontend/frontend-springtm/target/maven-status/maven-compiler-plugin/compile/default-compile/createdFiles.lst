@@ -1,1 +1,9 @@
+com\taskmanager\frontendspringtm\controller\TaskController.class
+com\taskmanager\frontendspringtm\configuration\UserConfiguration.class
+com\taskmanager\frontendspringtm\controller\CommonController.class
+com\taskmanager\frontendspringtm\configuration\TaskConfiguration.class
+com\taskmanager\frontendspringtm\port\impl\RestApiController$2.class
+com\taskmanager\frontendspringtm\port\impl\RestApiController$1.class
+com\taskmanager\frontendspringtm\controller\AccountController.class
 com\taskmanager\frontendspringtm\FrontendSpringTmApplication.class
+com\taskmanager\frontendspringtm\port\impl\RestApiController.class

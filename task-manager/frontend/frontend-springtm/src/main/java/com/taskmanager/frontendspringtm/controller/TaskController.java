@@ -17,18 +17,20 @@ public class TaskController {
     private final CreateTask createTask;
     private final FindAllTasks findAllTasks;
     private final FindTaskById findTaskById;
-
     private final FindTaskByStatus findTaskByStatus;
     private final UpdateTask updateTask;
     private final DeleteTask deleteTask;
 
-    public TaskController(CreateTask createTask, FindAllTasks findAllTasks, FindTaskById findTaskById, FindTaskByStatus findTaskByStatus, UpdateTask updateTask, DeleteTask deleteTask) {
+    private final ConcludeTask concludeTask;
+
+    public TaskController(CreateTask createTask, FindAllTasks findAllTasks, FindTaskById findTaskById, FindTaskByStatus findTaskByStatus, UpdateTask updateTask, DeleteTask deleteTask, ConcludeTask concludeTask) {
         this.createTask = createTask;
         this.findAllTasks = findAllTasks;
         this.findTaskById = findTaskById;
         this.findTaskByStatus = findTaskByStatus;
         this.updateTask = updateTask;
         this.deleteTask = deleteTask;
+        this.concludeTask = concludeTask;
     }
 
     @GetMapping("/all")
@@ -92,5 +94,14 @@ public class TaskController {
     public String deleteTask(@PathVariable("id")final int id) {
         final boolean result = deleteTask.deleteTask(id);
         return "redirect:/task/all";
+    }
+
+    @GetMapping("/conclude/{id}")
+    public String concludeTask(@PathVariable("id") int id){
+        boolean result = concludeTask.concludeTask(id);
+        if (!result){
+            return "redirect:/task/all";
+        }
+        return "redirect:/not-found";
     }
 }

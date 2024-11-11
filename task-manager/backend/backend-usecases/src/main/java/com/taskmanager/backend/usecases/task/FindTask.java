@@ -4,7 +4,6 @@ import com.taskmanager.backend.usecases.exception.InvalidException;
 import com.taskmanager.backend.usecases.exception.NotFoundException;
 import com.taskmanager.backend.usecases.port.TaskRepository;
 import com.taskmanager.domain.TaskModel;
-import org.springframework.scheduling.config.Task;
 
 import java.util.List;
 

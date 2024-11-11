@@ -1,0 +1,3 @@
+com\taskmanager\backend\implementation\repository\TaskDaoPostgres.class
+com\taskmanager\backend\implementation\repository\UserDaoPostgres.class
+com\taskmanager\backend\implementation\repository\connection\ConnectionFactory.class

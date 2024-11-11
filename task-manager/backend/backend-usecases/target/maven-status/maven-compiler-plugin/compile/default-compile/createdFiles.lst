@@ -1,0 +1,9 @@
+com\taskmanager\backend\usecases\task\UpdateTask.class
+com\taskmanager\backend\usecases\task\FindTask.class
+com\taskmanager\backend\usecases\task\CreateTask.class
+com\taskmanager\backend\usecases\exception\InvalidException.class
+com\taskmanager\backend\usecases\port\TaskRepository.class
+com\taskmanager\backend\usecases\exception\NotFoundException.class
+com\taskmanager\backend\usecases\port\UserRepository.class
+com\taskmanager\backend\usecases\task\DeleteTask.class
+com\taskmanager\backend\usecases\user\CreateUser.class

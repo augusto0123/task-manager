@@ -185,6 +185,31 @@ public class TaskDaoPostgres implements TaskRepository {
     }
 
     @Override
+    public boolean conclude(int id) {
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        String sql = "UPDATE tarefa SET status = 'Concluída' WHERE id = ?;";
+
+        try {
+            connection = ConnectionFactory.getConnection();
+            preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setInt(1, id);
+
+            preparedStatement.execute();
+            preparedStatement.close();
+
+            return false;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
     public int create(TaskModel taskModel) {
 
         Connection connection = null;
