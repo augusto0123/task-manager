@@ -88,12 +88,9 @@ public class TaskController {
         return "redirect:/not-found";
     }
 
-    @PostMapping("/delete/{id}")
-    public String deleteTask(@PathVariable("id") int id) {
-        boolean result = deleteTask.deleteTask(id);
-        if (!result) {
-            return "redirect:/task/all";
-        }
-        return "redirect:/not-found";
+    @GetMapping("/delete/{id}")
+    public String deleteTask(@PathVariable("id")final int id) {
+        final boolean result = deleteTask.deleteTask(id);
+        return "redirect:/task/all";
     }
 }
