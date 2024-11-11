@@ -4,7 +4,7 @@
 Instruções para Configuração e Execução
 
 1. Preparação Inicial
-Clonar o repositório: Baixe o projeto diretamente do GitHub usando o comando git clone [URL-do-repositorio] ou através da interface do GitHub.
+Clonar o repositório: Baixe o projeto diretamente do GitHub usando o comando git clone https://github.com/augusto0123/task-manager.git ou através da interface do GitHub.
 Abrir o projeto: Abra o projeto no IntelliJ.
 2. Configuração do Banco de Dados
 Abrir o pgAdmin: Conecte-se ao PostgreSQL usando o pgAdmin.
