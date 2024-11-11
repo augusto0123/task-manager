@@ -49,6 +49,7 @@ body {
 .navbar-links a {
     text-decoration: none;
     color: #fff;
+    font-size: 23px;
 }
 
 /* Layout Principal */
